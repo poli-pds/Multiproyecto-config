@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /api/v1/poli
+  port: 9080
+spring:
+  application:
+    name: product
+  profiles:
+    active: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/

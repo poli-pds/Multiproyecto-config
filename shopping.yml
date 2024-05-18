@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /api/v1/poli
+  port: 9082
+spring:
+  application:
+    name: shopping
+  profiles:
+    active: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/
