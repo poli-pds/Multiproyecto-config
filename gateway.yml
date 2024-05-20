@@ -1,0 +1,27 @@
+server:
+  port: 8086
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: product
+          uri: lb://product
+          predicates:
+            - Path=/api/v1/poli/products/**
+        - id: customer
+          uri: lb://customer
+          predicates:
+            - Path=/api/v1/poli/customers/**
+        - id: shopping
+          uri: lb://shopping
+          predicates:
+            - Path=/api/v1/poli/shoppings/**
